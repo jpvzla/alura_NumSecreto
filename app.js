@@ -38,7 +38,7 @@ let Int_NumeroDeUsuario = 0;
 let Int_NumeroIntentos = 1;
 let Int_ListaElementos = [];
 let Int_NumeroGenerado = 0;
-let Int_NumeroMaximo = 3;
+let Int_NumeroMaximo = 5;
 
 
 /* Cosntantes */
