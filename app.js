@@ -51,6 +51,9 @@ function f_LimpiaEntradaUsuario() {
 function f_VerificaIntento() {
 
     Int_NumeroDeUsuario = parseInt(document.getElementById('Int_EntradaUsuario').value);
+    if (!isNaN(Int_NumeroDeUsuario) ) {
+        
+     
     /*console.log('Int_NumeroSecreto');
     console.log(typeof(Int_NumeroSecreto));
     console.log(Int_NumeroSecreto);
@@ -59,20 +62,21 @@ function f_VerificaIntento() {
     console.log(Int_NumeroDeUsuario);
     console.log(Int_NumeroSecreto === Int_NumeroDeUsuario ); // === igualdad incluyendo el tipo de dato. Con == el tipo de dato no se considera
     */
-if (Int_NumeroDeUsuario === Int_NumeroSecreto) {
-    f_AsignarTextoElementos('p', `Ganaste el juego en ${Int_NumeroIntentos} ${Int_NumeroIntentos == 1 ? 'intento' : 'intentos'}`);
-    document.getElementById('reiniciar').removeAttribute('disabled') // Activa el botón cambiando el atributo
-} else {
-        if (Int_NumeroDeUsuario < Int_NumeroSecreto) {
-            f_AsignarTextoElementos('p', 'El número secreto es mayor');
-} else {
-        f_AsignarTextoElementos('p', 'El número secreto es menor');
-}
-Int_NumeroIntentos ++;
-f_LimpiaEntradaUsuario();
-    
+    if (Int_NumeroDeUsuario === Int_NumeroSecreto) {
+        f_AsignarTextoElementos('p', `Ganaste el juego en ${Int_NumeroIntentos} ${Int_NumeroIntentos == 1 ? 'intento' : 'intentos'}`);
+        document.getElementById('reiniciar').removeAttribute('disabled') // Activa el botón cambiando el atributo
+    } else {
+            if (Int_NumeroDeUsuario < Int_NumeroSecreto) {
+                f_AsignarTextoElementos('p', 'El número secreto es mayor');
+    } else {
+            f_AsignarTextoElementos('p', 'El número secreto es menor');
+    }
+    Int_NumeroIntentos ++;
+    f_LimpiaEntradaUsuario();
+    }   
     return;
 }
+    
 }
 
 
